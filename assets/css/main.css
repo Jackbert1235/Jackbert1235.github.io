@@ -1659,35 +1659,46 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+
+/* === Desktop default: float image left, text wraps beside === */
 .float-container {
     display: flex;
     align-items: flex-start; /* top-align image and text */
     gap: 1.5rem;             /* spacing between image and text */
+    overflow: auto; /* contain floated children */
 }
 
 .float-img {
-    max-width: 40%;
-    height: auto;
+  float: left;
+  max-width: 40%;      /* image takes part of container width */
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  height: auto;
 }
 
 .float-text {
     flex: 1; /* text fills remaining space */
+    overflow: hidden;    /* ensures text wraps nicely beside float */
+
 }
 
 /* 📱 Mobile view: stack image on top */
 @media screen and (max-width: 736px) {
-    .floath-container {
+    .float-container {
         flex-direction: column;  /* stack vertically */
         align-items: center;     /* center the image only */
     }
 
     .float-img {
+	float: none;             /* cancel float */
+	display: block;          /* full-width element */
         max-width: 80%;          /* make image larger on mobile */
-        margin-bottom: 1rem;
+        margin: 0 auto 1rem auto; /* center image, spacing below */
     }
 
     .float-text {
         text-align: left;        /* ✅ keep text left-aligned */
         width: 100%;             /* make sure text spans full width */
+	overflow: visible;       /* reset to normal flow */
     }
 }
