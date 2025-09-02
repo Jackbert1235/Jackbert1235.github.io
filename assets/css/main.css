@@ -1701,4 +1701,32 @@ input, select, textarea {
         width: 100%;             /* make sure text spans full width */
 	overflow: visible;       /* reset to normal flow */
     }
-}b
+}
+
+ul.icons li a[data-tooltip] {
+  position: relative;
+}
+
+/* Hidden by default */
+ul.icons li a[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 2.5rem;              /* appear below the circle */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8); /* dark background */
+  color: #fff;
+  padding: 0rem 0.6rem;
+  border-radius: 0.0rem;
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+/* Show on hover */
+ul.icons li a[data-tooltip]:hover::after {
+  opacity: 1;
+}
