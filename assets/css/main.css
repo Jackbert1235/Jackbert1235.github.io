@@ -194,8 +194,9 @@ input, select, textarea {
 			width: -webkit-max-content;
 			width: -ms-max-content;
 			width: max-content;
-			padding-bottom: 0.5rem;
-			margin: 0 0 2rem 0;
+			padding: 0 1rem 0.1rem 1.4rem;
+			margin: 0 auto 1rem auto;
+			text-align: center;
 		}
 
 	h1 {
@@ -207,7 +208,7 @@ input, select, textarea {
 	h2 {
 		font-size: 1.5rem;
 		line-height: 1.4;
-		letter-spacing: 0.5rem;
+		letter-spacing: 0.3rem;
 	}
 
 	h3 {
@@ -914,10 +915,11 @@ input, select, textarea {
 				border-radius: 100%;
 				box-shadow: inset 0 0 0 1px #ffffff;
 				display: inline-block;
-				height: 2.25rem;
-				line-height: 2.25rem;
+				height: 3rem;
+				line-height: 3rem;
 				text-align: center;
-				width: 2.25rem;
+				width: 3rem;
+				font-size: 2rem;
 			}
 
 				ul.icons li a:hover {
@@ -1656,3 +1658,36 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+.float-container {
+    display: flex;
+    align-items: flex-start; /* top-align image and text */
+    gap: 1.5rem;             /* spacing between image and text */
+}
+
+.float-img {
+    max-width: 40%;
+    height: auto;
+}
+
+.float-text {
+    flex: 1; /* text fills remaining space */
+}
+
+/* 📱 Mobile view: stack image on top */
+@media screen and (max-width: 736px) {
+    .floath-container {
+        flex-direction: column;  /* stack vertically */
+        align-items: center;     /* center the image only */
+    }
+
+    .float-img {
+        max-width: 80%;          /* make image larger on mobile */
+        margin-bottom: 1rem;
+    }
+
+    .float-text {
+        text-align: left;        /* ✅ keep text left-aligned */
+        width: 100%;             /* make sure text spans full width */
+    }
+}
