@@ -1664,14 +1664,14 @@ input, select, textarea {
 .float-container {
     display: flex;
     align-items: flex-start; /* top-align image and text */
-    gap: 1.5rem;             /* spacing between image and text */
+    gap: 0rem;             /* spacing between image and text */
     overflow: auto; /* contain floated children */
 }
 
 .float-img {
   float: left;
-  max-width: 40%;      /* image takes part of container width */
-  margin-right: 1.5rem;
+  max-width: 42%;      /* image takes part of container width */
+  margin-right: .75rem;
   margin-bottom: 1rem;
   height: auto;
 }
@@ -1724,6 +1724,12 @@ ul.icons li a[data-tooltip]::after {
   pointer-events: none;
   transition: opacity 0.2s ease-in-out;
   z-index: 10;
+}
+
+/* Center action buttons */
+#cv .actions {
+  display: flex;
+  justify-content: center;
 }
 
 /* Show on hover */
